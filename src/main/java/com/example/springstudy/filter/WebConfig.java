@@ -11,8 +11,8 @@ import javax.servlet.Filter;
 public class WebConfig implements WebMvcConfigurer {
 
     @Bean
-    public FilterRegistrationBean<LogFilter> logFilter() {
-        final FilterRegistrationBean<LogFilter> filterRegistrationBean = new FilterRegistrationBean<>();
+    public FilterRegistrationBean<Filter> logFilter() {
+        final FilterRegistrationBean<Filter> filterRegistrationBean = new FilterRegistrationBean<>();
         filterRegistrationBean.setFilter(new LogFilter());
         filterRegistrationBean.setOrder(1);
         filterRegistrationBean.addUrlPatterns("/*");
@@ -21,8 +21,8 @@ public class WebConfig implements WebMvcConfigurer {
     }
 
     @Bean
-    public FilterRegistrationBean<LoginCheckFilter> loginCheckFilter() {
-        final FilterRegistrationBean<LoginCheckFilter> filterRegistrationBean = new FilterRegistrationBean<>();
+    public FilterRegistrationBean<Filter> loginCheckFilter() {
+        final FilterRegistrationBean<Filter> filterRegistrationBean = new FilterRegistrationBean<>();
         filterRegistrationBean.setFilter(new LoginCheckFilter());
         filterRegistrationBean.setOrder(2);
         filterRegistrationBean.addUrlPatterns("/*");
